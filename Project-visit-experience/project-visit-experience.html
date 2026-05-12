@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html data-wf-domain="www.nidhibhat.xyz" data-wf-page="6709feee6524e6a624050002" data-wf-site="6709ab44f5d55b23e7ea8476" lang="en"><head><meta charset="utf-8"><title>Project - GEOH</title><meta content="Project - GEOH" property="og:title"><meta content="Project - GEOH" property="twitter:title"><meta content="width=device-width, initial-scale=1" name="viewport"><meta content="kpJjLJvyqZfgSLRZw_nqqzgjE1mTvq2JobUxVQoDhTw" name="google-site-verification"><meta content="Webflow" name="generator"><link href="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/css/nidhibhatdesigns.webflow.shared.7933b6920.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Oswald:200,300,400,500,600,700","PT Serif:400,400italic,700,700italic","Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67dcabcd6d997f5e061e8ef0_favicon.png" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67dcabf1bfd66b00b678c71f_webclip.png" rel="apple-touch-icon"><meta name="viewport" content="width=1280">
+<style>
+  /* GEOH placeholder visuals */
+  .geoh-placeholder {
+    background: #EAF4FE;
+    border: 1.5px dashed #CFE4FA;
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 280px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+  }
+  .geoh-placeholder-sm {
+    min-height: 180px;
+    padding: 40px 30px;
+  }
+  .geoh-placeholder-label {
+    color: #555;
+    font-size: 14px;
+    font-family: Mulish, sans-serif;
+    font-weight: 700;
+  }
+  .geoh-placeholder-caption {
+    color: #999;
+    font-size: 12px;
+    font-family: Mulish, sans-serif;
+    font-style: italic;
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  /* Tab structure visual */
+  .geoh-tabs-visual {
+    background: #EAF4FE;
+    border: 1px solid #CFE4FA;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 28px 0;
+  }
+  .geoh-tabs-visual-label {
+    font-family: Mulish, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .geoh-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .geoh-tab {
+    background: #EAF4FE;
+    border: 1px solid #CFE4FA;
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-family: Mulish, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #444;
+  }
+  .geoh-tab.active {
+    background: #2699FB;
+    color: #FFFFFF;
+    border-color: #2699FB;
+  }
+  .geoh-tabs-note {
+    font-family: Mulish, sans-serif;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+  }
+
+  /* Tab flow grouping */
+  .geoh-tab-groups {
+    display: flex;
+    align-items: stretch;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 28px 0;
+    margin: 28px 0;
+  }
+  .geoh-tab-group {
+    flex: 1;
+    padding: 0 28px;
+    border-right: 1px solid #CFE4FA;
+  }
+  .geoh-tab-group:first-child { padding-left: 0; }
+  .geoh-tab-group:last-child { padding-right: 0; border-right: none; }
+  .geoh-tab-group-number {
+    font-family: Mulish, sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #C5DFFE;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .geoh-tab-group-stage {
+    font-family: Mulish, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #111;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .geoh-tab-group-sub {
+    font-family: Mulish, sans-serif;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.55;
+  }
+  .geoh-stage-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .geoh-stage-pill {
+    font-family: Mulish, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #2699FB;
+    background: #DCEEFF;
+    border: 1px solid #CFE4FA;
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+  .geoh-mockup-label {
+    font-family: Mulish, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 12px;
+  }
+  .geoh-tab-group-arrow {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 70px;
+    flex-shrink: 0;
+    margin: 0 -12px;
+    position: relative;
+    z-index: 1;
+  }
+  .geoh-tab-group-arrow-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #CFE4FA;
+    background: #EAF4FE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #2699FB;
+    flex-shrink: 0;
+  }
+
+  /* Before / After */
+  .geoh-before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0 32px;
+  }
+  .geoh-col-before,
+  .geoh-col-after {
+    background: #EAF4FE;
+    border: 1px solid #CFE4FA;
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+  .geoh-col-before { border-top: 4px solid #CFE4FA; }
+  .geoh-col-after  { border-top: 4px solid #2699FB; }
+  .geoh-ba-label {
+    font-family: Mulish, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #AAAAAA;
+    margin-bottom: 16px;
+  }
+  .geoh-col-after .geoh-ba-label { color: #2699FB; }
+  .geoh-ba-item {
+    font-family: Mulish, sans-serif;
+    font-size: 13px;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #CFE4FA;
+    line-height: 1.5;
+  }
+  .geoh-ba-item:last-child { border-bottom: none; }
+
+  /* Vitals comparison */
+  .geoh-vitals-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0 28px;
+  }
+  .geoh-vitals-phase {
+    background: #EAF4FE;
+    border: 1px solid #CFE4FA;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+  .geoh-vitals-phase.v2 { border-left: 4px solid #2699FB; }
+  .geoh-phase-eyebrow {
+    font-family: Mulish, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #AAAAAA;
+    margin-bottom: 10px;
+  }
+  .geoh-vitals-phase.v2 .geoh-phase-eyebrow { color: #2699FB; }
+  .geoh-vitals-phase h4 {
+    font-family: Mulish, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px;
+  }
+  .geoh-vitals-phase p {
+    font-family: Mulish, sans-serif;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Workflow cards */
+  .geoh-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0 24px;
+  }
+  .geoh-workflow-card {
+    background: #EAF4FE;
+    border: 1px solid #CFE4FA;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .geoh-workflow-title {
+    font-family: Mulish, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .geoh-workflow-desc {
+    font-family: Mulish, sans-serif;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 767px) {
+    .geoh-before-after,
+    .geoh-vitals-compare,
+    .geoh-tab-groups { grid-template-columns: 1fr; }
+    .geoh-workflow-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 479px) {
+    .geoh-workflow-grid { grid-template-columns: 1fr; }
+  }
+  .mingcutecheck-2-fill:not([style*="filter"]) {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(85%) saturate(700%) hue-rotate(185deg) brightness(105%);
+  }
+  .w-layout-blockcontainer.w-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 600ms ease, transform 600ms 50ms ease;
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+  }
+</style>
+</head><body><div class="page-wrapper"><div class="global-styles w-embed"><style>
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+*[tabindex]:focus-visible, input[type="file"]:focus-visible { outline: 0.125rem solid #4d65ff; outline-offset: 0.125rem; }
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child { margin-top: 0 !important; }
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child { margin-bottom: 0 !important; }
+.pointer-events-off { pointer-events: none; }
+.pointer-events-on { pointer-events: auto; }
+.div-square::after { content: ""; display: block; padding-bottom: 100%; }
+.container-medium,.container-small, .container-large { margin-right: auto !important; margin-left: auto !important; }
+.text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.text-style-2lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.display-inlineflex { display: inline-flex; }
+.hide { display: none !important; }
+@media screen and (max-width: 991px) { .hide, .hide-tablet { display: none !important; } }
+@media screen and (max-width: 767px) { .hide-mobile-landscape { display: none !important; } }
+@media screen and (max-width: 479px) { .hide-mobile { display: none !important; } }
+</style></div><main class="main-wrapper">
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<div class="about-hero_navbar"></div>
+<section><section class="section-161"><div class="div-block-10"><div class="frame-179"><div class="frame-180"><a href="../index.html" class="w-inline-block"><img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67a7013b057a722a21e68086_Layer_1.svg" loading="lazy" width="118" height="38" alt="" class="layer_1"></a><div class="frame-181"><div class="nav-button"><a href="../index.html#Projects" class="link-block-10 w-inline-block"><div class="text-22">WORK</div></a></div><div class="frame-183 nav-button"><a href="../About/about.html" class="link-block-11 w-inline-block"><div class="text-22">ABOUT ME</div></a></div></div></div></div></div></section></section>
+
+<!-- ─── INTRO ─────────────────────────────────────────────── -->
+<section class="intro">
+  <div data-reveal class="w-layout-blockcontainer w-container">
+    <h1 class="heading-5">Designing a clinical visit experience for a homecare platform expanding into skilled nursing</h1>
+    <div class="text-block-23">PRODUCT DESIGN &nbsp;·&nbsp; HEALTHCARE WORKFLOW DESIGN</div>
+  </div>
+</section>
+
+<!-- ─── HERO IMAGE ─────────────────────────────────────────── -->
+<section class="hero-img enroute">
+  <div data-reveal class="w-layout-blockcontainer container-153 praan w-container">
+    <div class="geoh-placeholder" style="min-height:380px; background: transparent; border: none; padding-left: 0; padding-right: 0;">
+      <div class="geoh-placeholder-label">Hero Annotated full visit UI (9 tabs)</div>
+      <div class="geoh-placeholder-caption">Expanded from 4 → 9 tabs to support clinical workflows in GEOH's skilled nursing expansion</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTEXT ────────────────────────────────────────────── -->
+<section id="Context" class="context">
+  <div data-reveal class="w-layout-blockcontainer container-109 w-container">
+    <div class="frame-187">
+      <div class="text-23">CONTEXT</div>
+      <div class="text-24"><span class="the-phase-i-of-the-project-focused-on-the-research-we-conducted-an-extensive-desk-research-and-user">In 2026, GEOH moved into skilled nursing. The platform had been built for non-clinical homecare: simpler visits, lower data density, no clinical structure. Skilled nursing required something the system wasn't designed to handle.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROLE / TEAM ────────────────────────────────────────── -->
+<section class="section-162" style="padding-top: 24px; padding-bottom: 256px;">
+  <div data-reveal class="w-layout-blockcontainer container-110 w-container">
+    <div class="frame-194">
+      <div class="frame-192">
+        <div class="text-25 role-praan" style="color: #2699FB;">MY ROLE</div>
+        <div class="text-26"><span><em class="italic-text-30">I led the UX design for the skilled nursing visit experience</em>, responsible for information architecture, interaction design, and iterative prototyping across all 9 tabs of the clinical visit workflow</span></div>
+      </div>
+      <div class="frame-191">
+        <div class="frame-188">
+          <div class="text-27">TEAM</div>
+          <div class="text-28">UX/UI designer,<br>product manager, engineers</div>
+        </div>
+        <div class="frame-188">
+          <div class="text-27">COMPANY</div>
+          <div class="text-29">GEOH</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE PROBLEM (REDESIGNED) ────────────────────────────── -->
+<section class="section-178" style="padding-top: 50px; padding-bottom: 256px;">
+  <div data-reveal class="w-layout-blockcontainer container-140 w-container">
+
+    <!-- Context intro -->
+    <div class="text-133" style="margin-bottom: 32px; font-size: 30px; line-height: 36px; color: #030303;">For context, here's what the <em style="color: #2699FB; font-style: italic; font-family: Georgia, serif;">non-skilled home-care</em><br>visit interface looks like -</div>
+
+    <!-- Screenshot + User Flow -->
+    <div style="display: grid; grid-template-columns: 2.7fr 1fr; gap: 40px; align-items: start; margin-bottom: 64px;">
+
+      <!-- Left: screenshot placeholder -->
+      <div style="background: #EAF4FE; border-radius: 10px; min-height: 224px; display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: Mulish, sans-serif; font-size: 11px; letter-spacing: 0.08em; color: #646464;">[PLACEHOLDER FOR SCREENSHOT]</span>
+      </div>
+
+      <!-- Right: USER FLOW diagram -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+
+        <!-- Label capsule -->
+        <div style="border: 0.5px solid #5C8FCB; border-radius: 6px; padding: 5px 18px; font-family: Mulish, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #030303; margin-bottom: 9px;">User Flow</div>
+
+        <!-- Dashed outer container -->
+        <div style="border: 0.5px dashed #5C8FCB; border-radius: 10px; padding: 16px 14px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 0;">
+
+          <div style="background: #E2E2E2; border-radius: 6px; padding: 7px 10px; font-family: Mulish, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #030303; width: 100%; text-align: center; box-sizing: border-box;">Caregiver Checks-In</div>
+
+          <div style="display: flex; flex-direction: column; align-items: center; margin: 6px 0;">
+            <div style="width: 1px; height: 12px; background: #5C8FCB;"></div>
+            <div style="width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #5C8FCB;"></div>
+          </div>
+
+          <div style="background: #DCEEFF; border-radius: 6px; padding: 7px 10px; font-family: Mulish, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #030303; width: 100%; text-align: center; box-sizing: border-box;">Completes All Tasks</div>
+
+          <div style="display: flex; flex-direction: column; align-items: center; margin: 6px 0;">
+            <div style="width: 5px; height: 5px; border-radius: 50%; background: #5C8FCB;"></div>
+            <div style="width: 1px; height: 10px; border-left: 1.5px dashed #5C8FCB;"></div>
+            <div style="width: 5px; height: 5px; border-radius: 50%; background: #5C8FCB;"></div>
+          </div>
+
+          <div style="background: #DCEEFF; border-radius: 6px; padding: 7px 10px; font-family: Mulish, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #030303; width: 100%; text-align: center; box-sizing: border-box;">Logs All Goals</div>
+
+          <div style="display: flex; flex-direction: column; align-items: center; margin: 6px 0;">
+            <div style="width: 1px; height: 12px; background: #5C8FCB;"></div>
+            <div style="width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #5C8FCB;"></div>
+          </div>
+
+          <div style="background: #E2E2E2; border-radius: 6px; padding: 7px 10px; font-family: Mulish, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #030303; width: 100%; text-align: center; box-sizing: border-box;">Caregiver Checks-Out</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; font-family: Mulish, sans-serif; font-size: 20px; color: #030303; line-height: 1.4; margin-bottom: 96px;">the homecare visit interface has 4 navigation tabs, where all features are found in the first tab - Facesheet, other 3 tabs are for documentation</div>
+
+    <!-- THE PROBLEM eyebrow -->
+    <div style="font-family: Mulish, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #838383; margin-bottom: 16px;">The Problem</div>
+
+    <!-- Headline -->
+    <div style="font-family: Mulish, sans-serif; font-size: 30px; font-weight: 400; color: #030303; line-height: 1.25; margin-bottom: 32px;">Skilled nursing <em style="color: #B90000; font-style: italic; font-family: Georgia, serif;">adds complexity</em> the current visit structure couldn't handle.</div>
+
+    <!-- Two problem cards -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 16px;">
+
+      <div style="background: #FAFAFA; border-radius: 8px; padding: 24px 28px;">
+        <div style="width: 20px; height: 20px; background: #B90000; border-radius: 50%; margin-bottom: 18px;"></div>
+        <div class="text-133" style="font-size: 18px; color: #030303;">Current system had <strong>no clinical data model,</strong> so vitals tracking and assessments <strong>had nowhere to live.</strong></div>
+      </div>
+
+      <div style="background: #FAFAFA; border-radius: 8px; padding: 24px 28px;">
+        <div style="width: 20px; height: 20px; background: #B90000; border-radius: 50%; margin-bottom: 18px;"></div>
+        <div class="text-133" style="font-size: 18px; color: #030303;">The product was built for sparse visits, but skilled nursing <strong>needed dense, continuous documentation.</strong></div>
+      </div>
+
+    </div>
+
+    <!-- Decision block -->
+    <div style="border-left: 3px solid #2699FB; padding-left: 24px; margin-top: 120px; padding-top: 0
+    ;">
+      <div style="font-family: Mulish, sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: #2699FB; margin-bottom: 10px; text-transform: uppercase;">I took a design decision:</div>
+      <div class="text-75">I stopped organizing the visit around system categories and aligned it to how caregivers actually work:<br><strong>context → observation → assessment → documentation → submission.</strong></div>
+    </div>
+
+  <div data-reveal class="w-layout-blockcontainer container-143 w-container" style="padding-top: 0; padding-bottom: 0;">
+    <div class="div-block-24" style="background: transparent; padding: 0;">
+
+      <!-- Tab bar visual — replaced by embedded pills in stage cards -->
+      <div class="geoh-tabs-visual" style="display: none;">
+        <div class="geoh-tabs-visual-label">Visit Tabs Organized by Workflow Stage</div>
+        <div class="geoh-tab-bar">
+          <div class="geoh-tab active">Facesheet</div>
+          <div class="geoh-tab">Notes</div>
+          <div class="geoh-tab">Vitals</div>
+          <div class="geoh-tab">Body System Exam</div>
+          <div class="geoh-tab">Incident Log</div>
+          <div class="geoh-tab">Wound Care</div>
+          <div class="geoh-tab">Forms</div>
+          <div class="geoh-tab">GPS</div>
+          <div class="geoh-tab">Documents</div>
+        </div>
+        <div class="geoh-tabs-note">Tabs organized around caregiver workflow, not system categories</div>
+      </div>
+
+      <!-- Workflow grouping visual with embedded tab pills -->
+      <div class="geoh-tab-groups">
+        <div class="geoh-tab-group">
+          <div class="geoh-tab-group-number">01</div>
+          <div class="geoh-tab-group-sub">Patient context, goals, allergies, and medications are reviewed upfront as the <strong>starting point</strong> for care.</div>
+        </div>
+        <div class="geoh-tab-group-arrow"><div class="geoh-tab-group-arrow-circle">›</div></div>
+        <div class="geoh-tab-group">
+          <div class="geoh-tab-group-number">02</div>
+          <div class="geoh-tab-group-sub">Vitals and observations are recorded using <strong>clear input fields</strong> with optional notes.</div>
+        </div>
+        <div class="geoh-tab-group-arrow"><div class="geoh-tab-group-arrow-circle">›</div></div>
+        <div class="geoh-tab-group">
+          <div class="geoh-tab-group-number">03</div>
+          <div class="geoh-tab-group-sub">Assessments are completed through <strong>focused questionnaires.</strong></div>
+        </div>
+        <div class="geoh-tab-group-arrow"><div class="geoh-tab-group-arrow-circle">›</div></div>
+        <div class="geoh-tab-group">
+          <div class="geoh-tab-group-number">04</div>
+          <div class="geoh-tab-group-sub">Incidents and wound care are documented as <strong>time-based entries.</strong></div>
+        </div>
+        <div class="geoh-tab-group-arrow"><div class="geoh-tab-group-arrow-circle">›</div></div>
+        <div class="geoh-tab-group">
+          <div class="geoh-tab-group-number">05</div>
+          <div class="geoh-tab-group-sub">Forms, verification, and documentation are completed as <strong>final records.</strong></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 50px; display: none;">
+        <div class="text-block-34">How I approached the structure</div>
+        <div style="display: flex; gap: 20px; margin-top: 36px; align-items: flex-start; width: 100%; max-width: 1052px;">
+
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-family: Mulish, sans-serif; font-weight: 700; font-size: 14px; line-height: 1; margin-bottom: 12px; flex-shrink: 0;">1</div>
+            <div style="background: #fff; border-radius: 24px; padding: 32px; width: 100%; box-sizing: border-box;">
+              <div class="text-132">Workflow-First Grouping</div>
+              <div class="text-133" style="margin-top: 12px;">Tabs were organized around caregiver tasks, not system categories reducing the need to navigate or switch context during a visit.</div>
+            </div>
+          </div>
+
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-family: Mulish, sans-serif; font-weight: 700; font-size: 14px; line-height: 1; margin-bottom: 12px; flex-shrink: 0;">2</div>
+            <div style="background: #fff; border-radius: 24px; padding: 32px; width: 100%; box-sizing: border-box;">
+              <div class="text-132">Structure for Flexibility</div>
+              <div class="text-133" style="margin-top: 12px;">With evolving requirements, each tab was designed to accommodate scope changes without breaking the broader visit flow.</div>
+            </div>
+          </div>
+
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-family: Mulish, sans-serif; font-weight: 700; font-size: 14px; line-height: 1; margin-bottom: 12px; flex-shrink: 0;">3</div>
+            <div style="background: #fff; border-radius: 24px; padding: 32px; width: 100%; box-sizing: border-box;">
+              <div class="text-132">Continuous Validation</div>
+              <div class="text-133" style="margin-top: 12px;">Quick prototypes and internal reviews shaped the structure iteratively as clinical workflows became clearer over time.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ─── DEFINING VISIT STRUCTURE: 9 TABS ──────────────────── -->
+<section class="section-179" style="padding-top: 50px; padding-bottom: 256px;">
+  <div data-reveal class="w-layout-blockcontainer container-142 w-container">
+    <div class="frame-5137">
+      <div class="text-123">DEFINING THE STRUCTURE OF A VISIT</div>
+      <div class="text-124">That call had a direct structural consequence: <strong>9 navigation tabs, each scoped to one stage of clinical work,</strong> sequenced around the order caregivers actually move through a visit.</div>
+    </div>
+  </div>
+  <div data-reveal class="w-layout-blockcontainer container-142 w-container" style="padding-top: 0; padding-bottom: 0;">
+    <div class="text-125" style="font-size: 20px;">How this translated into the interface</div>
+    <div class="geoh-placeholder geoh-placeholder-sm">
+      <div class="geoh-placeholder-label">Annotated full visit UI (9 tabs)</div>
+      <div class="geoh-placeholder-caption">Expanded from 4 → 9 tabs to support clinical workflows</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE / AFTER (moved: belongs right after system design) ── -->
+<section class="section-179" style="padding-top: 0; padding-bottom: 0; display: none;">
+  <div class="w-layout-blockcontainer container-142 w-container">
+    <div class="frame-5137">
+      <div class="text-123">FROM GENERIC VISITS TO CLINICAL WORKFLOWS</div>
+      <div class="text-124">Moving from 4 tabs to 9 wasn&rsquo;t about adding features. It was about replacing a structure that couldn&rsquo;t hold clinical work with one built specifically around it.</div>
+    </div>
+  </div>
+  <div class="w-layout-blockcontainer container-143 w-container">
+    <div class="div-block-24">
+      <div class="geoh-before-after">
+        <div class="geoh-col-before">
+          <div class="geoh-ba-label">Before</div>
+          <div class="geoh-ba-item">4 loosely defined tabs</div>
+          <div class="geoh-ba-item">No support for clinical data</div>
+          <div class="geoh-ba-item">Designed for non-skilled visits</div>
+          <div class="geoh-ba-item">Low data density assumed</div>
+          <div class="geoh-ba-item">No medication, vitals, or assessment structure</div>
+        </div>
+        <div class="geoh-col-after">
+          <div class="geoh-ba-label">After</div>
+          <div class="geoh-ba-item">9 structured, workflow-organized tabs</div>
+          <div class="geoh-ba-item">Full clinical data architecture</div>
+          <div class="geoh-ba-item">Supports real-time clinical workflows</div>
+          <div class="geoh-ba-item">Handles high data density without overwhelming</div>
+          <div class="geoh-ba-item">Medication logging, structured vitals, multi-system assessments</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ZOOMING IN TITLE ────────────────────────────────────── -->
+<section style="padding-top: 96px; padding-bottom: 48px;">
+  <div data-reveal class="w-layout-blockcontainer container-140 w-container">
+    <div style="font-family: Mulish, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #838383; margin-bottom: 16px;">The Solution</div>
+    <div style="font-family: Mulish, sans-serif; font-size: 28px; font-weight: 700; color: #000; line-height: 1.3;">How this plays out across the visit</div>
+  </div>
+</section>
+
+<!-- ─── FACESHEET ──────────────────────────────────────────── -->
+<section class="section-178" style="padding-bottom: 64px;">
+  <div class="w-layout-blockcontainer container-140 w-container">
+  <div data-reveal class="div-block-30">
+
+    <div class="text-113" style="font-size: 24px; font-weight: 700; line-height: 24px; color: #1587E9; letter-spacing: 0; margin-bottom: 20px;">01. Facesheet</div>
+
+    <div class="text-75" style="width: 100%; margin-bottom: 32px;">The facesheet is the center of the visit. Client info, care goals, allergies, and active medications surfaced upfront. This is where real-time clinical decisions happen.</div>
+
+    <div style="border-left: 3px solid #111; background: #f0f0f0; border-radius: 16px; padding: 24px 32px; width: 100%; margin-bottom: 32px;">
+      <div class="text-75" style="font-style: italic; font-family: Georgia, serif;">Caregivers should never have to search for context they need in the first 30 seconds of a visit.</div>
+    </div>
+
+    <div class="geoh-placeholder">
+      <div class="geoh-placeholder-label">Facesheet UI (annotated)</div>
+      <div class="geoh-placeholder-caption">High-frequency information surfaced upfront client info, goals checklist, allergies, medications</div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ─── MEDICATIONS ────────────────────────────────────────── -->
+<section class="section-178" style="padding-bottom: 64px;">
+  <div class="w-layout-blockcontainer container-140 w-container">
+  <div data-reveal class="div-block-30">
+
+    <div class="text-113" style="font-size: 24px; font-weight: 700; line-height: 24px; color: #1587E9; letter-spacing: 0; margin-bottom: 20px;">02. Medications at the point of care</div>
+
+    <div class="text-75" style="width: 100%; margin-bottom: 32px;">Medications are managed in real time during the visit. Caregivers review and log actions directly in the facesheet, without leaving their workflow. This pattern scaled to support interaction checks and reminders.</div>
+
+    <div class="frame-5138" style="margin-bottom: 32px;">
+      <div class="text-125" style="font-size: 20px;">Progressive disclosure for dense data</div>
+      <div class="text-124">Medication lists are <strong>dense and time-sensitive.</strong> The accordion keeps the list <strong>compact by default</strong>, expands on demand, and supports inline actions in both states.</div>
+    </div>
+
+    <div class="columns-41 w-row">
+      <div class="column-56 w-col w-col-6">
+        <div class="w-layout-vflex flex-block-2">
+          <div class="geoh-placeholder">
+            <div class="geoh-placeholder-label">Medication accordion collapsed</div>
+            <div class="geoh-placeholder-caption">Compact by default list view with key medication names</div>
+          </div>
+          <div class="text-block-32">Compact list: medications visible without scrolling, quick overview of the visit&rsquo;s medication plan.</div>
+        </div>
+      </div>
+      <div class="w-col w-col-6">
+        <div class="w-layout-vflex flex-block-3">
+          <div class="geoh-placeholder">
+            <div class="geoh-placeholder-label">Medication accordion expanded + inline action</div>
+            <div class="geoh-placeholder-caption">Full detail with "given / not given" logged inline</div>
+          </div>
+          <div class="text-block-33">Expanded: full dosage detail and inline logging caregiver never leaves the facesheet.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-block-26" style="margin-top: 40px; border-color: #2699FB;">
+      <div class="text-block-34">What this structure enabled</div>
+      <div class="frame-5146">
+        <div class="frame-5147">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" loading="lazy" width="24" height="24" alt="" class="mingcutecheck-2-fill">
+          <div class="frame-5148"><div class="text-132">In-visit logging</div></div>
+          <div class="text-133">Medication actions are logged without leaving the facesheet. The visit flow stays intact.</div>
+        </div>
+        <div class="frame-5147">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" loading="lazy" width="24" height="24" alt="" class="mingcutecheck-2-fill">
+          <div class="frame-5149"><div class="text-132">Progressive disclosure</div></div>
+          <div class="text-133">The accordion surfaces what caregivers need when they need it, without exposing all detail at once.</div>
+        </div>
+        <div class="frame-5147">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" loading="lazy" width="24" height="24" alt="" class="mingcutecheck-2-fill">
+          <div class="frame-5150"><div class="text-132">Structural flexibility</div></div>
+          <div class="text-133">When interaction checks and reminders were added later, the layout didn&rsquo;t need to change. The structure absorbed the new complexity.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ─── VITALS ─────────────────────────────────────────────── -->
+<section class="section-178" style="padding-bottom: 64px;">
+  <div class="w-layout-blockcontainer container-140 w-container">
+  <div data-reveal class="div-block-30">
+
+    <div class="text-113" style="font-size: 24px; font-weight: 700; line-height: 24px; color: #1587E9; letter-spacing: 0; margin-bottom: 20px;">03. Vitals</div>
+
+    <div class="text-75" style="width: 100%; margin-bottom: 32px;">Vitals posed a different problem. Not where to surface them, but how to capture them without sacrificing data quality. Free text entry produced inconsistent data with no way to compare or surface patterns across visits. Phase 2 replaced it with structured inputs: each vital has its own field with contextual sub-inputs (position, site, systolic vs. diastolic) and a notes field for edge cases. The constraint was speed. Structured inputs had to be at least as fast as typing.</div>
+
+    <div class="columns-41 w-row">
+      <div class="column-56 w-col w-col-6">
+        <div class="geoh-placeholder">
+          <div class="geoh-placeholder-label">Vitals Phase 1 (free text)</div>
+          <div class="geoh-placeholder-caption">Unstructured input led to inconsistent data</div>
+        </div>
+      </div>
+      <div class="w-col w-col-6">
+        <div class="geoh-placeholder">
+          <div class="geoh-placeholder-label">Vitals Phase 2 (structured inputs)</div>
+          <div class="geoh-placeholder-caption">From free text → structured inputs for consistency</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ─── OTHER WORKFLOWS ────────────────────────────────────── -->
+<section class="section-177" style="padding-top: 0; padding-bottom: 16px;">
+  <div class="w-layout-blockcontainer container-141 w-container">
+    <div data-reveal class="div-block-33" style="border-color: #2699FB;">
+      <div class="text-120"><strong>The remaining tabs follow the same principle: one task, one place.</strong></div>
+      <div class="text-121" style="display: none;">The structure reduces overlap and keeps each task focused. No tab tries to do too much each one has a clear scope within the visit, making the overall system easier to navigate and maintain.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-178" style="padding-top: 0; padding-bottom: 96px;">
+  <div class="w-layout-blockcontainer container-140 w-container">
+
+    <div data-reveal class="geoh-workflow-grid">
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">Body System Exam</div>
+        <div class="geoh-workflow-desc">Questionnaires scoped to specific body systems: respiratory, cardiovascular, neurological. Caregivers assess what is clinically relevant, not everything at once.</div>
+      </div>
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">Incident Log</div>
+        <div class="geoh-workflow-desc">Timestamped, structured entries for clinical events: falls, acute illness, hospitalization. Unstructured incident notes are unusable downstream.</div>
+      </div>
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">Wound Care</div>
+        <div class="geoh-workflow-desc">Wound status captured with structured inputs for size, stage, and treatment applied. Consistent fields make documentation traceable across visits.</div>
+      </div>
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">Notes</div>
+        <div class="geoh-workflow-desc">Free-form documentation for observations that don&rsquo;t fit structured fields. Every structured system needs an escape valve.</div>
+      </div>
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">Forms &amp; Documents</div>
+        <div class="geoh-workflow-desc">Clinical forms and reference documents kept within the visit context. Leaving the app to access a form breaks the visit flow.</div>
+      </div>
+      <div class="geoh-workflow-card">
+        <div class="geoh-workflow-title">GPS</div>
+        <div class="geoh-workflow-desc">Location verification for visit start and end. Carried forward from the original system because the underlying need didn&rsquo;t change even though the visit did.</div>
+      </div>
+    </div>
+
+    <div class="geoh-placeholder geoh-placeholder-sm">
+      <div class="geoh-placeholder-label">Grid Body System Exam / Incident Log / Wound Care UI</div>
+      <div class="geoh-placeholder-caption">Each tab supports a distinct clinical task</div>
+    </div>
+
+    <div class="text-133" style="max-width: 680px; margin-top: 32px; color: #555;">With all 9 tabs in place, the structure held. What that meant for caregivers in practice was concrete.</div>
+
+  </div>
+</section>
+
+<!-- ─── BEFORE / AFTER (moved to after system design — hidden here) ── -->
+<section class="section-179" style="display: none;">
+  <div class="w-layout-blockcontainer container-142 w-container">
+    <div class="frame-5137">
+      <div class="text-123">FROM GENERIC VISITS TO CLINICAL WORKFLOWS</div>
+      <div class="text-124">The redesign transformed the visit from a loosely structured screen into a full clinical environment handling higher data complexity without overwhelming caregivers.</div>
+    </div>
+  </div>
+  <div class="w-layout-blockcontainer container-143 w-container">
+    <div class="div-block-24">
+
+      <div class="geoh-before-after">
+        <div class="geoh-col-before">
+          <div class="geoh-ba-label">Before</div>
+          <div class="geoh-ba-item">4 loosely defined tabs</div>
+          <div class="geoh-ba-item">No support for clinical data</div>
+          <div class="geoh-ba-item">Designed for non-skilled visits</div>
+          <div class="geoh-ba-item">Low data density assumed</div>
+          <div class="geoh-ba-item">No medication, vitals, or assessment structure</div>
+        </div>
+        <div class="geoh-col-after">
+          <div class="geoh-ba-label">After</div>
+          <div class="geoh-ba-item">9 structured, workflow-organized tabs</div>
+          <div class="geoh-ba-item">Full clinical data architecture</div>
+          <div class="geoh-ba-item">Supports real-time clinical workflows</div>
+          <div class="geoh-ba-item">Handles high data density without overwhelming</div>
+          <div class="geoh-ba-item">Medication logging, structured vitals, multi-system assessments</div>
+        </div>
+      </div>
+
+      <div class="geoh-placeholder geoh-placeholder-sm">
+        <div class="geoh-placeholder-label">Before vs After old visit UI vs new clinical visit UI</div>
+        <div class="geoh-placeholder-caption">Transition from generic 4-tab to clinical 9-tab workflow</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── IMPACT ─────────────────────────────────────────────── -->
+<section class="section-180" style="padding-top: 50px; padding-bottom: 256px;">
+  <div data-reveal class="w-layout-blockcontainer container-145 w-container">
+
+    <div class="text-134">WHAT CHANGED</div>
+
+    <div class="text-block-31" style="margin-bottom: 24px;">What the structure <em class="italic-text-29" style="color: #2699FB;">made possible</em></div>
+
+    <div class="text-133" style="max-width: 680px; margin-bottom: 32px;">Most of the gains came from structural decisions, not from any individual screen. When the visit is organized around how caregivers work, the friction disappears before the UI is even considered.</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
+
+      <div style="background: #fff; border-radius: 16px; padding: 28px 32px; border: 1px solid rgba(0,0,0,0.08);">
+        <div style="width: 36px; height: 36px; background: #E6F2FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="18" height="18" alt="">
+        </div>
+        <div class="text-167" style="margin-bottom: 8px;">Context switching eliminated mid-visit</div>
+        <div class="text-133">Caregivers previously navigated across tabs and external tools to piece together a visit. Grouping clinical tasks by workflow stage meant the visit could be completed in one continuous sequence without breaking flow to hunt for context.</div>
+      </div>
+
+      <div style="background: #fff; border-radius: 16px; padding: 28px 32px; border: 1px solid rgba(0,0,0,0.08);">
+        <div style="width: 36px; height: 36px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="18" height="18" alt="">
+        </div>
+        <div class="text-167" style="margin-bottom: 8px;">Medication logging moved inline</div>
+        <div class="text-133">Surfacing medications on the facesheet with inline actions meant caregivers could log &ldquo;given / not given&rdquo; without leaving the active visit. Documentation happened where the clinical action happened.</div>
+      </div>
+
+      <div style="background: #fff; border-radius: 16px; padding: 28px 32px; border: 1px solid rgba(0,0,0,0.08);">
+        <div style="width: 36px; height: 36px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="18" height="18" alt="">
+        </div>
+        <div class="text-167" style="margin-bottom: 8px;">High-density data made workable</div>
+        <div class="text-133">Free text vitals and flat medication lists created noise, not records. Structured inputs scoped to each vital type, combined with progressive disclosure on medications, made dense clinical data capturable without slowing caregivers down.</div>
+      </div>
+
+      <div style="background: #fff; border-radius: 16px; padding: 28px 32px; border: 1px solid rgba(0,0,0,0.08);">
+        <div style="width: 36px; height: 36px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="18" height="18" alt="">
+        </div>
+        <div class="text-167" style="margin-bottom: 8px;">The structure absorbed post-launch additions</div>
+        <div class="text-133">Medication interaction checks and reminders were integrated after launch without restructuring the visit. When new requirements arrived, the system had a place for them. That was the real test of whether the architecture was sound.</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── REFLECTION ─────────────────────────────────────────── -->
+<section class="section-181" style="padding-top: 50px; padding-bottom: 48px;">
+  <div data-reveal class="w-layout-blockcontainer container-146 w-container">
+
+    <div class="text-136" style="margin-bottom: 16px;">REFLECTION</div>
+    <div class="text-block-31" style="margin-bottom: 24px;">What this project <em class="italic-text-29" style="color: #2699FB;">clarified</em></div>
+    <div class="text-133" style="margin-bottom: 32px;">Skilled nursing forced a shift from screen-level thinking to system-level thinking. The lessons weren&rsquo;t subtle.</div>
+
+    <div style="display: flex; flex-direction: column; width: 100%;">
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid #ebebeb;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #2699FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="14" height="14" alt="" style="filter: brightness(0) invert(1);">
+        </div>
+        <div>
+          <div class="text-137" style="margin-bottom: 6px;">IA decisions outweigh UI decisions</div>
+          <div class="text-133">The most impactful work had nothing to do with visual design. Organizing the visit around caregiver tasks rather than system categories shaped everything else downstream.</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid #ebebeb;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #2699FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="14" height="14" alt="" style="filter: brightness(0) invert(1);">
+        </div>
+        <div>
+          <div class="text-137" style="margin-bottom: 6px;">Flexibility is a design decision, not an afterthought</div>
+          <div class="text-133">Requirements shifted throughout execution. Designing each component to hold a range of scope, not a fixed one, meant the system stayed usable as things changed.</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid #ebebeb;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #2699FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="14" height="14" alt="" style="filter: brightness(0) invert(1);">
+        </div>
+        <div>
+          <div class="text-137" style="margin-bottom: 6px;">Clinical environments are not controlled flows</div>
+          <div class="text-133">Caregivers work fast, under pressure, mid-visit. Every decision was tested against those conditions, not an idealized use case.</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; padding: 24px 0;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #2699FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px;">
+          <img src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/67cd4982fcc6403abaa55a9d_mingcute%3Acheck-2-fill.svg" width="14" height="14" alt="" style="filter: brightness(0) invert(1);">
+        </div>
+        <div>
+          <div class="text-137" style="margin-bottom: 6px;">A good system absorbs new requirements</div>
+          <div class="text-133">Interaction checks, reminders, and new assessment types were added after launch. None of them required rethinking the visit structure. That was the real test.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CTA ────────────────────────────────────────────────── -->
+<section class="ending-cta">
+  <a href="../index.html#Projects" class="button-5 enroute praan w-button">View Other Projects</a>
+</section>
+
+<!-- ─── DIVIDER ────────────────────────────────────────────── -->
+<section class="section-144"><div class="div-block-7"></div></section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<section class="footer-all">
+  <div class="w-layout-blockcontainer container-21 w-container">
+    <div class="columns-15 _1920 w-row">
+      <div class="w-col w-col-6">
+        <h1 class="heading-3 footerhead desktop">Let&rsquo;s Talk!</h1>
+      </div>
+      <div class="w-col w-col-6">
+        <div>
+          <div class="w-layout-layout quick-stack-7 wf-layout-layout">
+            <div class="w-layout-cell"><p class="paragraph-19 footer-text-grey desktop">Have an interesting idea in mind? Hit me up!<br>Let&rsquo;s collaborate.</p></div>
+          </div>
+          <div class="w-layout-layout quick-stack-8 wf-layout-layout">
+            <div class="w-layout-cell"><img width="20" alt="" src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/670a0d967a6d14615b75b890_Vector.png" loading="lazy" class="image-26 desktop"></div>
+            <div class="w-layout-cell"><a href="mailto:hello@nidhibhat.xyz" class="link-block-18 w-inline-block"><p class="paragraph-19 footer-text-email tablet">hello@nidhibhat.xyz</p></a></div>
+          </div>
+          <div class="w-layout-layout quick-stack-8 wf-layout-layout">
+            <div class="w-layout-cell"><img width="20" height="" alt="" src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/670a0d967a6d14615b75b88b_Vector-1.png" loading="lazy" class="image-24"></div>
+            <div class="w-layout-cell"><a href="https://linkedin.com/in/nidhibhat18" class="link-block-19 w-inline-block"><p class="paragraph-19 footer-text-linkedin tablet">linkedin.com/in/nidhibhat18</p></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6709ab44f5d55b23e7ea8476" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/js/webflow.schunk.5855de91e9c02c3c.js" type="text/javascript"></script>
+<script src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/js/webflow.schunk.e456bd7363a3ce2a.js" type="text/javascript"></script>
+<script src="https://cdn.prod.website-files.com/6709ab44f5d55b23e7ea8476/js/webflow.43c95ea6.a7daaa65e8a88531.js" type="text/javascript"></script>
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>
